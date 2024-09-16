@@ -9,7 +9,13 @@
 palavra = str(input('Digite uma palavra: '))
 qtdLetras = len(palavra)
 
+contrario = ''
+
 for i in range(qtdLetras - 1, -1, -1):
-    for j in range(0, qtdLetras):
-        print(palavra[j])
-        # print(palavra[i])
+        contrario += palavra[i]
+
+if palavra == contrario:
+        print(palavra, 'é Palíndromo!')
+else:
+        print(palavra, 'não é Palíndormo!')
+
