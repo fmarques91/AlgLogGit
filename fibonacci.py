@@ -2,6 +2,16 @@
 
 final = int(input('Digite até quanto irá o calculo: '))
 
-f = 0
-for i in range(1, final + 1):
-    print(i + f)
+f = []
+
+for i in range(final):
+    if i <= 1:
+        f.append(i)
+    else:
+        f.append(f[i - 1] + f[i - 2])
+
+    if f[i] > final:
+        f.pop()
+        break
+
+print(f)
