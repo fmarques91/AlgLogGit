@@ -2,7 +2,6 @@
 
 
 lista = []
-listaFinal =[]
 
 while True:
     numero = input('Digite um número ou Close, para sair: ')
@@ -11,8 +10,6 @@ while True:
     else:
         lista.append(numero)
 
+lista.sort()
 
-for i in range(len(lista)):
-    for j in range(len(lista)):
-        if lista[i] > lista[j]:
-            
+print(lista)
