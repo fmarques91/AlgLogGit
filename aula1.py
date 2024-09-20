@@ -3,11 +3,11 @@ idade = input('Qual a sua idade: ')
 peso = input('Qual o seu peso: ')
 
 print('Seu nome é', nome + ', você tem', idade, 'anos de idade, e pesa', peso + 'kg')
-
+##
 op = 1
 while op != 0:
-    n1 = int(input('Digite o primeiro número da conta '))
-    n2 = int(input('Digite o segundo número da sua conta: '))
+    n1 = int(input('Digite o primeiro número para a conta: '))
+    n2 = int(input('Digite o segundo número para sua conta: '))
     
     print('Sua soma é:', n1 + n2)
     
