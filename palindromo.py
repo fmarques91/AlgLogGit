@@ -14,7 +14,7 @@ contrario = ''
 for i in range(qtdLetras - 1, -1, -1):
         contrario += palavra[i]
 
-if palavra == contrario:
+if palavra.replace(' ', '').upper() == contrario.replace(' ', '').upper():
         print(palavra, 'é Palíndromo!')
 else:
         print(palavra, 'não é Palíndormo!')
