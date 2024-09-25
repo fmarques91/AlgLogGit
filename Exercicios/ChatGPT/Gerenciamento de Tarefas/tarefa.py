@@ -10,7 +10,6 @@ class Tarefa:
         print('Descrição da tarefa: ', self.descricao)
         print('Status: ', self.status)
 
-
 def listarTodos(lista):
     for i in range(len(lista)):
         print('\n', i + 1, ')')
@@ -48,3 +47,4 @@ def listarTarefas(opcao2, bdTarefas):
         print('\n')
     else:
         print('Digite uma opção válida!')
+        
