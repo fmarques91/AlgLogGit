@@ -1,4 +1,4 @@
-from tarefa import Tarefa, concluirTarefa, listarTodos, listarTarefas
+from tarefa import Tarefa, concluirTarefa, listarTarefas
 
 bdTarefas = []
 
