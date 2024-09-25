@@ -24,20 +24,24 @@ while i >= 1:
     tentativa = input('Digite uma letra: ').upper()
 
     if tentativa in letraRepetida:
-        print('Estas palavras já foram utilizadas {}, tente outra'.format(letraRepetida))
+        print('Estas letras já foram utilizadas {}, tente outra!'.format(letraRepetida))
+        print('*' * 100)
     else:    
         if tentativa in palavra:
-            print('Você acertou: ')
-            print('Palavra atual é {}'.format(palavraAtual(palavra, tentativa)))
+            print('Você acertou a letra: ')
+            letraRepetida.append(tentativa)
+            print('Palavra atual é {} e você possui {} tentativas!'.format(palavraAtual(palavra, tentativa), i))
+            print('*' * 100)
         else:
             if i == 1:
                 i -= 1
                 print('Que pena, você perdeu o jogo!!')
             else:
                 i -= 1
-                print('Você errou! Agora restam {}'.format(i))
-
-        letraRepetida.append(tentativa)
+                print('Você errou! Agora restam {} tentativas!'.format(i))
+                letraRepetida.append(tentativa)
+                print('E você já utilizou estas letras: {}'.format(letraRepetida))
+                print('*' * 100)
     
     if palavra == palavraFinal:
         print('*' * 100)
