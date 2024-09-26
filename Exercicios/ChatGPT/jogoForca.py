@@ -2,6 +2,9 @@
 
 # Desenvolva uma versão simples do jogo da forca, onde o usuário deve adivinhar uma palavra escolhida aleatoriamente.
 
+import json
+import random
+
 def palavraAtual(palavra, letra):
     
     for i in range(len(palavra)):
@@ -10,13 +13,25 @@ def palavraAtual(palavra, letra):
 
     return palavraFinal
 
-palavra = list(input('Digite uma palavra: ').upper())
-dica = input('Escreva uma dica sobre a palavra: ')
+def lerPalavras(arquivo):
+    try:
+        with open(arquivo, 'r', encoding='utf-8') as f:
+            palavra_json = json.load(f)
+            return [{'palavra': p['palavra'], 'dica': p['dica']} for p in palavra_json]
+    except FileNotFoundError:
+        print('Nada encontrado')
+
+
+dicPalavra = lerPalavras('jogoForca.json')
+sortPalavra = random.randint(0, len(dicPalavra) - 1)
+
+palavra = dicPalavra[sortPalavra]['palavra'].upper()
+
 palavraFinal = ['_'] * len(palavra)
 letraRepetida = []
 
 print('Você tem 7 chances!!!')
-print('Sua dica para a palavra é "{}"'.format(dica))
+print('Sua dica para a palavra é "{}"'.format(dicPalavra[sortPalavra]['dica']))
 print('Sua palavra tem {} letras: {}'.format(len(palavra), '_ ' * len(palavra)))
 
 i = 7
@@ -43,7 +58,7 @@ while i >= 1:
                 print('E você já utilizou estas letras: {}'.format(letraRepetida))
                 print('*' * 100)
     
-    if palavra == palavraFinal:
+    if list(palavra) == palavraFinal:
         print('*' * 100)
         print('PARABÉNS, VOCÊ GANHOU, ACERTOU A PALAVRA: {}'.format(palavra))
         print('*' * 100)
