@@ -47,4 +47,3 @@ def listarTarefas(opcao2, bdTarefas):
         print('\n')
     else:
         print('Digite uma opção válida!')
-        
