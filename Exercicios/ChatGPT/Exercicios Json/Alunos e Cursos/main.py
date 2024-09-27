@@ -1,0 +1,31 @@
+from aluno import *
+from saveLoad import *
+from funcoes import *
+from curso import *
+
+bdAluno = loadAlunos('bdAluno.json')
+bdCurso = []
+
+while True:
+    opcao = menu()
+    
+    if opcao == 1:
+        aluno = Aluno(input('Nome: '), input('Idade: '))
+        opcao = 0
+        while opcao != 'sair':
+            opcao = int(input('1 Cadastrar e 0 Sair: '))
+            if opcao == 0:
+                break
+            curso = Curso(input('Curso: '), input('Nota: '))
+            bdCurso.append(curso)
+        aluno.curso = curso
+        
+        bdAluno.append(aluno)
+    elif opcao == 2:
+        for aluno in bdAluno:
+            aluno.showAluno()
+    elif opcao == 3:
+        print
+    elif opcao == 0:
+        # saveAlunos(bdAluno, 'bdAluno.json')
+        break
