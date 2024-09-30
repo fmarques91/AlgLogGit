@@ -17,8 +17,7 @@ while True:
             if opcao == 0:
                 break
             curso = Curso(input('Curso: '), input('Nota: '))
-            bdCurso.append(curso)
-        aluno.curso = curso
+            aluno.curso.append(curso)
         
         bdAluno.append(aluno)
     elif opcao == 2:
