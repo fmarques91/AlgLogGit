@@ -3,14 +3,15 @@ while True:
 
     try:
         n = int(n)
-        print('Número: ', n)
+        print('Número:', n)
         break
     except ValueError:
         print('Digite uma opção válida!')
 
 fatorial = 1
 print('Calculando {}! = '.format(n), end='')
-for i in range(n, 0, -1):
-    print(str(i), 'x ' if i != 1 else '= ', end='')
-    fatorial = fatorial * i
+while n > 0:
+    print(str(n), 'x ' if n > 1 else '= ', end='')
+    fatorial = fatorial * n
+    n -= 1
 print(fatorial)
