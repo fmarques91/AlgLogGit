@@ -10,9 +10,13 @@ while True:
     if opcao ==0:
         saveEstudantes(bdEstudante, 'estudantes.json')
         break
+    
     elif opcao == 1:
         estudante = Estudante(input('Digite o seu nome: '), input('Digite sua média: '))
         bdEstudante.append(estudante)
+        
+        estudante.cadastrarCurso()
+        
     elif opcao == 2:
         for est in bdEstudante:
             est.showEstudante()

@@ -1,1 +1,1 @@
-[{"nome": "Francisco", "media": "9"}, {"nome": "Camila", "media": "8"}, {"nome": "Billy", "media": "5"}]
+[{"nome": "Francisco", "media": "8", "curso": ["Desenvolvimento", "Sistemas", "Banco de Dados"]}, {"nome": "Camila", "media": "9", "curso": ["Familia", "Criminal", "Constitucional"]}]

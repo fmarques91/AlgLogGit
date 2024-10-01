@@ -9,6 +9,11 @@ def loadEstudante(arquivo):
     try:
         with open(arquivo, 'r', encoding='utf-8') as f:
             estudanteLoad = json.load(f)
-            return [Estudante(est['nome'], est['media']) for est in estudanteLoad]
+            estudantes = []
+            for est in estudanteLoad:
+                aluno =  Estudante(est['nome'], est['media'])
+                aluno.curso = est['curso']
+                estudantes.append(aluno)
+            return estudantes
     except FileNotFoundError:
         return []
