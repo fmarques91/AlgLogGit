@@ -3,27 +3,24 @@ from saveLoad import *
 from funcoes import *
 from curso import *
 
-bdAluno = loadAlunos('bdAluno.json')
+# bdAluno = loadAlunos('bdAluno.json')
+bdAluno = []
 
 while True:
     opcao = menu()
     
     if opcao == 1:
         aluno = Aluno(input('Nome: '), input('Idade: '))
-        opcao = 0
-        while opcao != 'sair':
-            opcao = int(input('1) Cadastrar\n0) Sair: '))
-            if opcao == 0:
-                break
-            curso = Curso(input('Curso: '), input('Nota: '))
-            aluno.curso.append(curso)
+        aluno.addCurso()
         
         bdAluno.append(aluno)
     elif opcao == 2:
         for aluno in bdAluno:
             aluno.showAluno()
-    elif opcao == 3:
-        print
+            print('-=' * 20)
     elif opcao == 0:
-        # saveAlunos(bdAluno, 'bdAluno.json')
+        dict_bdAluno = [c.to_dict() for c in bdAluno]
+        saveAlunos(dict_bdAluno, 'bdAluno.json')
         break
+    else:
+        print('Digite uma opção válida!!')

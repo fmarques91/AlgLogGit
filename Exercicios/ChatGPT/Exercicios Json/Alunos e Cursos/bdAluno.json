@@ -1,0 +1,34 @@
+[
+    {
+        "nome": "Francisco",
+        "idade": "32",
+        "curso": [
+            {
+                "Curso": "dev",
+                "nota": 9.0
+            },
+            {
+                "Curso": "Sistemas",
+                "nota": 8.0
+            },
+            {
+                "Curso": "Banco de Dados",
+                "nota": 10.0
+            }
+        ]
+    },
+    {
+        "nome": "Camila",
+        "idade": "25",
+        "curso": [
+            {
+                "Curso": "Criminal",
+                "nota": 10.0
+            },
+            {
+                "Curso": "Familia",
+                "nota": 9.0
+            }
+        ]
+    }
+]

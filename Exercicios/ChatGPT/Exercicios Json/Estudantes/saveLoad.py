@@ -3,7 +3,7 @@ import json
 
 def saveEstudantes(bdEstudante, arquivo):
     with open(arquivo, 'w', encoding='utf-8') as f:
-        json.dump([estudante.__dict__ for estudante in bdEstudante], f, ensure_ascii=False)
+        json.dump([estudante.__dict__ for estudante in bdEstudante], f, ensure_ascii=False, indent=4)
         
 def loadEstudante(arquivo):
     try:
