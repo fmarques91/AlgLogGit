@@ -4,7 +4,6 @@ from funcoes import *
 from curso import *
 
 bdAluno = loadAlunos('bdAluno.json')
-bdCurso = []
 
 while True:
     opcao = menu()
@@ -13,7 +12,7 @@ while True:
         aluno = Aluno(input('Nome: '), input('Idade: '))
         opcao = 0
         while opcao != 'sair':
-            opcao = int(input('1 Cadastrar e 0 Sair: '))
+            opcao = int(input('1) Cadastrar\n0) Sair: '))
             if opcao == 0:
                 break
             curso = Curso(input('Curso: '), input('Nota: '))
