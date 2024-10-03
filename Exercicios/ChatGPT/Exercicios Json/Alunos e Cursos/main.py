@@ -3,7 +3,6 @@ from saveLoad import *
 from curso import *
 
 bdAluno = loadAlunos('bdAluno.json')
-# bdAluno = []
 
 while True:
     print('*' * 5, 'OPÇÕES', '*' * 5)
