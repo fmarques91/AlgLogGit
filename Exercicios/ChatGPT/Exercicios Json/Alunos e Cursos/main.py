@@ -1,13 +1,17 @@
 from aluno import *
 from saveLoad import *
-from funcoes import *
 from curso import *
 
 bdAluno = loadAlunos('bdAluno.json')
 # bdAluno = []
 
 while True:
-    opcao = menu()
+    print('*' * 5, 'OPÇÕES', '*' * 5)
+    print('1) Cadastrar')
+    print('2) Listar todos')
+    print('0) Sair')
+    
+    opcao = int(input('Digite sua opção: '))
     
     if opcao == 1:
         aluno = Aluno(input('Nome: '), input('Idade: '))

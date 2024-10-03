@@ -8,10 +8,17 @@ class Aluno:
         
         
     def showAluno(self):
+        i = 0
+        soma = 0
         print('Aluno: ', self.nome)
         print('Idade: ', self.idade)
         for curso in self.curso:
             curso.showCurso()
+            soma += curso.nota
+            i += 1
+        print('-' * 20)
+        print(f'Matriculado em um total de {i} cursos!')
+        print(f'Media entre as matérias é: {soma / i}')
         
     def addCurso(self):
         while True:
