@@ -30,5 +30,23 @@
                 "nota": 9.0
             }
         ]
+    },
+    {
+        "nome": "Billy",
+        "idade": "7",
+        "curso": [
+            {
+                "Curso": "Matemática",
+                "nota": 5.0
+            },
+            {
+                "Curso": "Português",
+                "nota": 4.0
+            },
+            {
+                "Curso": "Ciências",
+                "nota": 3.0
+            }
+        ]
     }
 ]

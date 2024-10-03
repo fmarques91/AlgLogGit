@@ -3,8 +3,8 @@ from saveLoad import *
 from funcoes import *
 from curso import *
 
-# bdAluno = loadAlunos('bdAluno.json')
-bdAluno = []
+bdAluno = loadAlunos('bdAluno.json')
+# bdAluno = []
 
 while True:
     opcao = menu()
