@@ -4,7 +4,7 @@ from saveLoad import *
 bdEstudante = loadEstudante('estudantes.json')
 
 while True: 
-    print('0) finalizar\n1) Cadastrar\n2) Listar')
+    print('1) Cadastrar\n2) Listar\n0) finalizar')
     opcao = int(input('Digite sua opção: '))
    
     if opcao ==0:
