@@ -18,7 +18,7 @@ print('=-' * 20)
 opcao = int(input('Digite a opção conrrespondente ao vídeo: '))
 caminhoVideo = arquivos[opcao - 1]
 
-#Caminho para saída do audio
+#Caminho para saída do audio / Tentar incluir um imput para nomear manualmente a saída.
 saidaAudioMp3 = "Audio Extraido.mp3"
 
 #Carrega o vídeo em uma variável, utilizando a função "VideoFileClip" e incluindo entre parenteses o caminho do arquivo
