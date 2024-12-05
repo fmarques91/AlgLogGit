@@ -10,9 +10,11 @@ estoque = [
 
 def showEstoque():
     print('=' * 20)
-    for produto, valor in estoque.items():
-        print(f'{produto}: {valor}')
-    print('=' * 20)
+    for i in range(len(estoque)):
+        for produto, quantidade, valor in estoque.items():
+            print(f'{produto}: {valor}')
+            print(f'Quantidade em estoque: {quantidade}')
+        print('=' * 20)
 
 while True:
     print('1) Adicionar Produtos')
