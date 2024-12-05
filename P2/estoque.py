@@ -1,12 +1,12 @@
 import numpy as np
 
-estoque = {'caderno': 10,
-           'caneta': 5,
-           'lapis': 8,
-           'borracha': 12,
-           'lapiseira': 7,
-           'corretivo': 15
-           }
+estoque = [
+    {'produto':'Arroz', 'quantidade':5, 'valor':5.50},
+    {'produto':'Feijão', 'quantidade':9, 'valor':8.70},
+    {'produto':'Farinha de Trigo', 'quantidade':10, 'valor':4.70},
+    {'produto':'Óleo', 'quantidade':7, 'valor':8.00},
+    {'produto':'Sal', 'quantidade':10, 'valor':2.90}
+]
 
 def showEstoque():
     print('=' * 20)
