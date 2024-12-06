@@ -1,19 +1,18 @@
 import numpy as np
 
 estoque = [
-    {'produto':'Arroz', 'quantidade':5, 'valor':5.50},
-    {'produto':'Feijão', 'quantidade':9, 'valor':8.70},
-    {'produto':'Farinha de Trigo', 'quantidade':10, 'valor':4.70},
-    {'produto':'Óleo', 'quantidade':7, 'valor':8.00},
-    {'produto':'Sal', 'quantidade':10, 'valor':2.90}
+    {'produto':'arroz', 'quantidade':5, 'valor':5.50},
+    {'produto':'feijão', 'quantidade':9, 'valor':8.70},
+    {'produto':'farinha de trigo', 'quantidade':10, 'valor':4.70},
+    {'produto':'óleo', 'quantidade':7, 'valor':8.00},
+    {'produto':'sal', 'quantidade':10, 'valor':2.90}
 ]
 
 def showEstoque():
     print('=' * 20)
-    for i in range(len(estoque)):
-        for produto, quantidade, valor in estoque.items():
-            print(f'{produto}: {valor}')
-            print(f'Quantidade em estoque: {quantidade}')
+    for produto in estoque:
+        print(f'{produto['produto'].title()}: R${produto['valor']:.2f}')
+        print(f'Qtd em estoque: {produto['quantidade']}')
         print('=' * 20)
 
 while True:
@@ -25,24 +24,33 @@ while True:
     opcao = int(input('Digite sua opção: '))
     
     if opcao == 1:
-        produto = input('Digite o nome do produto: ').lower()
-        estoque[produto] = int(input('Quantidade: '))
+        novoCadastro = {
+            'produto' : input('Novo produto a ser cadastrado: ').lower(),
+            'quantidade': int(input('Digite a quantidade em estoque: ')),
+            'valor' : float(input('Digite o valor unitário do produto: '))
+        }
+        estoque.append(novoCadastro)
     elif opcao == 2:
         showEstoque()
         alterarProduto = input('Qual produto deseja alterar: ').lower()
-        if alterarProduto in estoque:
-            estoque[alterarProduto] = int(input('Digite o novo valor: '))
+        
+        for produto in estoque:
+            if produto['produto'] == alterarProduto:
+                produto['quantidade'] = int(input('Digite o novo valor: '))
+                break
         else:
             print(alterarProduto, 'não encontrado no estoque.\n')
     elif opcao == 3:
         showEstoque()
         removerProduto = input('Qual produto deseja remover: ').lower()
         
-        if removerProduto in estoque:
-            estoque.pop(removerProduto)
-            print('Produto removido!!!\n')
+        for i in range(len(estoque)):
+            if estoque[i]['produto'] == removerProduto:
+                estoque.pop(i)
+                print(f'Produto "{removerProduto.title()}" removido com sucesso!!!\n')
+                break
         else:
-            print('Produto não encontrado.\n')
+            print(f'Produto "{removerProduto}" não encontrado.\n')
     elif opcao == 4:
         showEstoque()
     elif opcao == 0:
