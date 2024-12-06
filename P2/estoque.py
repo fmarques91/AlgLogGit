@@ -17,8 +17,8 @@ def showEstoque():
 
 while True:
     print('1) Adicionar Produtos')
-    print('2) Atualizar Quantidade')
-    print('3) Remover Produtos')
+    print('2) Remover Produtos')
+    print('3) Verificar Quantidade')
     print('4) Listar Produtos')
     print('0) Sair')
     opcao = int(input('Digite sua opção: '))
@@ -30,27 +30,37 @@ while True:
             'valor' : float(input('Digite o valor unitário do produto: '))
         }
         estoque.append(novoCadastro)
+
     elif opcao == 2:
-        showEstoque()
-        alterarProduto = input('Qual produto deseja alterar: ').lower()
-        
-        for produto in estoque:
-            if produto['produto'] == alterarProduto:
-                produto['quantidade'] = int(input('Digite o novo valor: '))
-                break
-        else:
-            print(alterarProduto, 'não encontrado no estoque.\n')
-    elif opcao == 3:
         showEstoque()
         removerProduto = input('Qual produto deseja remover: ').lower()
         
         for i in range(len(estoque)):
             if estoque[i]['produto'] == removerProduto:
                 estoque.pop(i)
+                print('=' * 20)
                 print(f'Produto "{removerProduto.title()}" removido com sucesso!!!\n')
+                print('=' * 20)
                 break
         else:
+            print('=' * 20)
             print(f'Produto "{removerProduto}" não encontrado.\n')
+            print('=' * 20)
+            
+    elif opcao == 3:
+        verificarProduto = input('Qual produto deseja verificar: ').lower()
+        
+        for produto in estoque:
+            if produto['produto'] == verificarProduto:
+                print('=' * 20)
+                print(f'O {verificarProduto} possui um total de {produto['quantidade']} unidades em estoque.')
+                print('=' * 20)
+                break
+        else:
+            print('=' * 20)
+            print(f'{verificarProduto.title()} não foi encontrado em estoque.')
+            print('=' * 20)
+                
     elif opcao == 4:
         showEstoque()
     elif opcao == 0:
