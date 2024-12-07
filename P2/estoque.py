@@ -8,14 +8,15 @@ estoque = [
     {'produto':'sal', 'quantidade':10, 'valor':2.90}
 ]
 
-def showEstoque():
+def showEstoque(estoque):
     print('=' * 20)
     for produto in estoque:
         print(f'{produto['produto'].title()}: R${produto['valor']:.2f}')
         print(f'Qtd em estoque: {produto['quantidade']}')
         print('=' * 20)
 
-while True:
+opcao = 100
+while opcao != 0:
     print('1) Adicionar Produtos')
     print('2) Remover Produtos')
     print('3) Verificar Quantidade')
@@ -32,7 +33,7 @@ while True:
         estoque.append(novoCadastro)
 
     elif opcao == 2:
-        showEstoque()
+        showEstoque(estoque)
         removerProduto = input('Qual produto deseja remover: ').lower()
         
         for i in range(len(estoque)):
@@ -62,11 +63,4 @@ while True:
             print('=' * 20)
                 
     elif opcao == 4:
-        showEstoque()
-    elif opcao == 0:
-        precos = np.array([10.0, 3, 2.50, 0.50, 10.0, 4.70])
-        qtd = np.array(list(estoque.values()))
-        
-        valorTotal = np.dot(precos, qtd)
-        print(f'O estoque possui o valor total de R${valorTotal:.2f} reais')        
-        break
+        showEstoque(estoque)
